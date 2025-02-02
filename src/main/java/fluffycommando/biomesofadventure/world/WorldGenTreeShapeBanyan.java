@@ -191,46 +191,26 @@ public class WorldGenTreeShapeBanyan extends WorldFeature {
 				}
 			}
 		}
-		//Tree Top
-		int[] StraightX = {2, 2, 3, 4, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-		int[] StraightZ = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2};
-		int[] StraightY = {-2, -1, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1};
-		int[] DiagonalX = {2, 3, 2, 3, 4, 5, 6, 7, 8, 4, 4, 5, 5};
-		int[] DiagonalZ = {2, 3, 2, 3, 4, 4, 4, 5, 5, 5, 6, 7, 8};
-		int[] DiagonalY = {-1, -1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1};
-		int meta = 0;
 		//Tree Leaves
 		int[][] LeavesX = {
+				{6, 6, 6, 6, 6, 5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5, -6, -6, -6, -6, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5},
+				{7, 7, 7, 8, 9, 9, 9, 8, 7, 8, 9, 9, 9, 8, 7, 7, 7, 6, 5, 4, 3, 3, 2, 1, 1, 0, -1, -1, -2, -3, -3, -4, -5, -6, -7, -7, -7, -8, -9, -9, -9, -8, -7, -8, -9, -9, -9, -8, -7, -7, -7, -6, -5, -4, -3, -3, -2, -1, -1, 0, 1, 1, 2, 3, 3, 4, 5, 6},
 				{11, 12, 10, 11, 12, 12, 11, 12, 10, 9, 10, 11, 8, 10, 8, 8, 7, 7, 6, 5, 5, 4, 3, 2, 1, 0, 0, 0, -1, -2, -2, -3, -4, -5, -6, -6, -7, -8, -9, -9, -10, -11, -10, -11, -12, -10, -11, -12, -10, -11, -12, -9, -10, -11, -12, -12, -11, -10, -10, -11, -9, -8, -9, -8, -7, -7, -6, -5, -5, -4, -3, -3, -3, -2, -2, -1, 0, 1, 2, 3, 4, 5, 5, 6, 6, 7, 8, 8, 9, 8, 9, 10, 11, 10, 11, 10, 11, 12, 12},
 				{11, 11, 11, 11, 10, 9, 8, 6, 7, 5, 5, 4, 3, 2, 1, 0, 0, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -10, -10, -11, -11, -10, -11, -11, -11, -11, -10, -9, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 5, 6, 7, 8, 8, 9, 10, 10, 10, 11},
 				{10, 10, 9, 8, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5, -6, -7, -8, -8, -9, -9, -9, -9, -9, -10, -9, -8, -7, -7, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 9, 9},
 				{7, 7, 6, 6, 5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5, -6, -7, -6, -7, -8, -7, -7, -6, -6, -5, -4, -3, -2, -1, 0, 1, 2, 2, 3, 4, 5, 6, 7, 6}};
 		int[][] LeavesZ = {
+				{-2, -1, 0, 1, 2, 3, 4, 5, 6, 6, 6, 6, 6, 5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5, -6, -6, -6, -6, -6, -5, -4, -3},
+				{-6, -5, -4, -3, -3, -2, -1, -1, 0, 1, 1, 2, 3, 3, 4, 5, 6, 7, 7, 7, 8, 9, 9, 9, 8, 7, 8, 9, 9, 9, 8, 7, 7, 7, 6, 5, 4, 3, 3, 2, 1, 1, 0, -1, -1, -2, -3, -3, -4, -5, -6, -7, -7, -7, -8, -9, -9, -9, -8, -7, -8, -9, -9, -9, -8, -7, -7, -7},
 				{0, 0, 1, 2, 2, 3, 4, 4, 5, 6, 6, 6, 7, 7, 8, 10, 9, 10, 9, 10, 11, 10, 11, 12, 11, 11, 12, 13, 10, 11, 12, 12, 11, 10, 10, 11, 9, 8, 9, 8, 7, 6, 5, 4, 4, 3, 2, 2, 1, 1, 1, 0, -1, -1, -2, -3, -4, -5, -6, -6, -7, -8, -9, -9, -10, -11, -10, -10, -11, -9, -10, -11, -12, -12, -13, -11, -12, -13, -13, -12, -11, -11, -12, -9, -10, -8, -9, -8, -8, -7, -6, -6, -6, -5, -4, -3, -2, -2, -1},
 				{0, 1, 2, 3, 4, 5, 6, 7, 7, 8, 9, 9, 10, 10, 10, 11, 12, 11, 11, 11, 10, 10, 9, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -11, -11, -11, -12, -12, -12, -11, -10, -10, -9, -8, -7, -7, -6, -5, -4, -3, -2, -1},
 				{0, 1, 2, 3, 4, 5, 6, 7, 7, 8, 8, 9, 9, 10, 9, 9, 8, 8, 7, 6, 5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -5, -6, -7, -7, -7, -8, -9, -9, -9, -10, -10, -10, -9, -8, -7, -7, -6, -5, -4, -3, -2, -1},
 				{0, 1, 2, 3, 4, 4, 5, 6, 6, 7, 7, 6, 6, 5, 5, 4, 3, 2, 1, 0, -1, -2, -3, -4, -4, -5, -6, -7, -8, -7, -6, -7, -6, -5, -5, -4, -3, -2, -1}};
-		for (int q = 0; q <= 3; q++) {
-			int B = 1;
-			int D = 1;
-			if (q == 1) {
-				D = -1;
-			} else if (q == 2) {
-				B = -1;
-			} else if (q == 3) {
-				B = -1;
-				D = -1;
-			}
-			//Top Branches
-			for (int k = 0; k <= 12; k++) {
-				world.setBlockAndMetadataWithNotify(x + StraightX[k] * B, y + treeHeight + StraightY[k] - 1, z + StraightZ[k] * D, this.logID, meta);
-				world.setBlockAndMetadataWithNotify(x + StraightZ[k] * B, y + treeHeight + StraightY[k] - 1, z + StraightX[k] * D, this.logID, meta);
-				world.setBlockAndMetadataWithNotify(x + DiagonalX[k] * B, y + treeHeight + DiagonalY[k] - 1, z + DiagonalZ[k] * D, this.logID, meta);
-			}
+		for (int q = 0; q <= 5; q++) {
+			int blockY = treeHeight + q - 1;
 			for (int m = 0; m <= LeavesX[q].length - 1; m++) {
-				world.setBlockWithNotify(x + LeavesX[q][m], y + treeHeight + q + 1, z + LeavesZ[q][m], this.leavesID);
+				world.setBlockWithNotify(x + LeavesX[q][m], y + blockY, z + LeavesZ[q][m], this.leavesID);
 			}
-			int blockY = treeHeight + q + 1;
 			for (int l = 0; l <= 3; l++) {
 				boolean finished = false;
 				int DirectionX = 1;
@@ -310,7 +290,46 @@ public class WorldGenTreeShapeBanyan extends WorldFeature {
 				}
 			}
 		}
+		//Tree Top Branches
+		int[] StraightX = {2, 2, 3, 4, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+		int[] StraightZ = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2};
+		int[] StraightY = {-2, -1, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 1};
+		int[] DiagonalX = {2, 3, 2, 3, 4, 5, 6, 7, 8, 4, 4, 5, 5};
+		int[] DiagonalZ = {2, 3, 2, 3, 4, 4, 4, 5, 5, 5, 6, 7, 8};
+		int[] DiagonalY = {-1, -1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1};
+		int meta = 0;
+		for (int w = 0; w <= 3; w++) {
+			int B = 1;
+			int D = 1;
+			if (w == 1) {
+				D = -1;
+			}
+			if (w == 2) {
+				B = -1;
+			}
+			if (w == 3) {
+				B = -1;
+				D = -1;
+			}
+			for (int k = 0; k <= 12; k++) {
+				world.setBlockAndMetadataWithNotify(x + StraightX[k] * B, y + treeHeight + StraightY[k] - 1, z + StraightZ[k] * D, this.logID, meta);
+				world.setBlockAndMetadataWithNotify(x + StraightZ[k] * B, y + treeHeight + StraightY[k] - 1, z + StraightX[k] * D, this.logID, meta);
+				world.setBlockAndMetadataWithNotify(x + DiagonalX[k] * B, y + treeHeight + DiagonalY[k] - 1, z + DiagonalZ[k] * D, this.logID, meta);
+			}
+		}
+		//Circle generation
+		int Circumference;
+		double Pi = 3.14159;
+		double radius = 5;
+		int degrees = 360;
 
+		Circumference = (int) (2 * Pi * radius);
+
+		for (int f = 0; f <= Circumference; f++) {
+
+			//current distance < radius
+
+		}
 		return true;
 	}
 }
